@@ -2,7 +2,7 @@ builds:
 - env:
   - CGO_ENABLED=0
   main: cmd/sensu-ethereum-check/main.go
-  binary: bin/{{ .ProjectName }}
+  binary: bin/sensu-ethereum-check
   goos:
     - darwin
     - freebsd
