@@ -110,7 +110,8 @@ func run(cmd *cobra.Command, args []string) error {
 func checkPeers(client *ethrpc.EthRPC) error {
 	peer, err := client.NetPeerCount()
 	if err != nil {
-		return err
+		fmt.Printf("CRITICAL: %s not answering to RPC requests\n", client.URL())
+		os.Exit(2)
 	}
 
 	if peer <= minPairCrit {
